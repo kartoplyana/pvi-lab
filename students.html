@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Studentsy</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="./students-style.css"/>
+        <link rel="stylesheet" href="./modal-window.css"/>
+    </head>
+
+    <body>
+        <header>
+            <a href="students.html" class="logo">Studentsy</a>
+
+            <div class="header-right">
+                <!-- <a href="messages.html" class="bell" aria-label="notifications">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge"></span>
+                </a> -->
+
+                <div class="notification-container">
+                    <a href="messages.html" class="bell" aria-label="notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notification-badge"></span>
+                    </a>
+                
+                    <div class="notification-dropdown">
+                        <h3>New Messages</h3>
+                        <ul>
+                            <li>
+                                <img src="gossip-t.jpg" alt="Student 1">
+                                <div class="message-info">
+                                    <p class="name">Andrii Potikha</p>
+                                    <p class="message">Buona giornata!</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="gossip-t.jpg" alt="Student 2">
+                                <div class="message-info">
+                                    <p class="name">Kate Havryshchuk</p>
+                                    <p class="message">See u on lection!</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="gossip-t.jpg" alt="Student 3">
+                                <div class="message-info">
+                                    <p class="name">Maria Lytvyn</p>
+                                    <p class="message">Let`s eat some cake with coffee</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="user-container">
+                    <div class="user-profile">
+                        <img src="gossip-t.jpg" alt="user-picture">
+                        <p>Polina Bakhmetieva</p>
+                    </div>
+
+                    <div class="profile-dropdown">
+                        <ul>
+                            <li>
+                                <p id="profile">Profile</p>
+                            </li>
+                            <li>
+                                <p id="log-out">Log Out</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <main>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="dashbord.html" class="nav-link">Dashbord</a></li>
+                        <li class="active-nav"><a href="students.html" class="nav-link">Students</a></li>
+                        <li><a href="tasks.html" class="nav-link">Tasks</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="content">
+                <div class="title-container">
+                    <h1>Students</h1>
+
+                    <button id="plus-button" class="plus-button" aria-label="button to add new student">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <div id="add-student-modal" class="modal add-modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1 class="modal-window-header">Add new student</h1>
+
+                            <div class="input-group">
+                                <p>Group</p>
+                                <select id="group-select">
+                                    <option disabled="disabled" selected="selected">Select group</option>
+                                    <option id="PZ-21">PZ-21</option>
+                                    <option id="PZ-22">PZ-22</option>
+                                    <option id="PZ-23">PZ-23</option>
+                                    <option id="PZ-24">PZ-24</option>
+                                    <option id="PZ-25">PZ-25</option>
+                                    <option id="PZ-26">PZ-26</option>
+                                    <option id="PZ-27">PZ-27</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <p>First name</p>
+                                <input type="text" id="first-name-input" aria-label="first name input">
+                            </div>
+
+                            <div class="input-group">
+                                <p>Last name</p>
+                                <input type="text" id="last-name-input" aria-label="last name input">
+                            </div>
+
+                            <div class="input-group">
+                                <p>Gender</p>
+                                <select id="gender-select">
+                                    <option disabled="disabled" selected="selected">Select gender</option>
+                                    <option id="male">Male</option>
+                                    <option id="female">Female</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <p>Birthday</p>
+                                <input type="date" id="birthday-input" aria-label="birthday input">
+                            </div>
+
+                            <button class="cancel-button">Cancel</button>
+                            <button class="create-button">Create</button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <table class="studentsy">
+                        <thead>
+                            <tr>
+                            <th aria-label="select all students"><input type="checkbox" id="main-check" aria-label="checkbox to select all students"></th>
+                            <th class="group">Group</th>
+                            <th class="name">Name</th>
+                            <th class="gender">Gender</th>
+                            <th class="birthday">Birthday</th>
+                            <th class="status">Status</th>
+                            <th class="options">Options</th>
+                            <th class="id">id</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="stud-check" aria-label="1 student check" onchange="selectStudent(event)"></td>
+                                <td>PZ-25</td>
+                                <td>Polina Bakhmetieva</td>
+                                <td>F</td>
+                                <td>13.08.2006</td>
+                                <td><div class="status-active"></div></td>
+                                <td>
+                                    <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button"> 
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </button>
+
+                                    <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                                <td class="id">1</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
+                                <td>PZ-25</td>
+                                <td>Andrii Potikha</td>
+                                <td>M</td>
+                                <td>18.12.2005</td>
+                                <td><div class="status-active"></div></td>
+                                <td>
+                                    <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </button>
+
+                                    <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                                <td class="id">2</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
+                                <td>PZ-25</td>
+                                <td>Maria Lytvyn</td>
+                                <td>F</td>
+                                <td>02.02.2006</td>
+                                <td><div class="status-unactive"></div></td>
+                                <td>
+                                    <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </button>
+
+                                    <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                                <td class="id">3</td>
+                            </tr>
+                            <!-- <tr>
+                                <td><input type="checkbox"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><div class="status-unactive"></div></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><div class="status-unactive"></div></td>
+                                <td></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+    
+                    <div class="students-nav">
+                        <button>&lt;-</button>
+                        <button class="first">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>-&gt;</button>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+
+        <div id="remove-student-modal" class="remove-modal">
+            <div class="modal-content">
+                <span class="close" onclick="cancelModalButton()">&times;</span>
+                <h1 class="modal-window-header">Warning</h1>
+
+                <p>Are you sure you want to delete user </p>
+                <button class="cancel-button" onclick="cancelModalButton()">Cancel</button>
+                <button class="ok-button">Ok</button>
+            </div>
+        </div>
+
+        <script src="add-button.js"></script>
+        <script src="edit-button.js"></script>
+        <script src="students-script.js"></script>
+        <script src="remove-button.js"></script>
+    </body>
+</html>
