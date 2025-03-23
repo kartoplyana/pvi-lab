@@ -16,6 +16,51 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+function showSidebar() {
+    const sidebar = document.querySelector(".small-sidebar");
+    sidebar.style.display = "flex";
+    const closeSidebar = document.querySelector("#close-sidebar");
+    closeSidebar.style.display = "flex";
+    if(sidebar.style.display === "flex") {
+        document.querySelector(".open-sidebar").style.display = "none";
+    }
+
+    if(window.innerWidth > 970) {
+        closeSidebar.style.display = "none";
+        sidebar.style.display = "none";
+    }
+    else {
+        closeSidebar.style.display = "flex";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.querySelector(".small-sidebar");
+    const openBtn = document.querySelector(".open-sidebar");
+    const closeBtn = document.querySelector("#close-sidebar");
+
+    // Відкриття sidebar
+    openBtn.addEventListener("click", function () {
+        sidebar.classList.add("open");
+    });
+
+    // Закриття sidebar
+    closeBtn.addEventListener("click", function () {
+        sidebar.classList.remove("open");
+    });
+});
+
+function hideSidebar(){
+    const sidebar = document.querySelector(".small-sidebar");
+    sidebar.style.display = "none";
+    if(window.innerWidth < 970) {
+        document.querySelector(".open-sidebar").style.display = "block";
+    }
+    else {
+        document.querySelector(".open-sidebar").style.display = "none";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const selectAllCheckbox = document.getElementById("main-check");
 
@@ -34,14 +79,5 @@ document.querySelector("#main-check").addEventListener("change", e => {
             editButton.disabled = true;
         })
     }
-        /*listOfStudents.querySelectorAll(".remove-button").forEach(removeButton => {
-            removeButton.disabled = false;
-        })
-    }
-    /*else {
-        listOfStudents.querySelectorAll(".remove-button").forEach(removeButton => {
-            removeButton.disabled = true;
-        }) 
-    }*/
 })
 

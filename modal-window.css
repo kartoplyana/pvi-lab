@@ -87,3 +87,48 @@
   color: white;
   font-size: 20px;
 }
+
+@media (max-width:760px) {
+  .modal-content {
+      width: 60%;
+  }    
+}
+
+@media(max-width: 650px) {
+  .header-left {
+      margin-left: 0;
+  }
+  .user-name {
+      display: none;
+  }
+  .user-profile {
+      margin-right: 12px;
+  }
+  input[type="text"] {
+    width: 150px;
+  }
+}
+
+@media(max-width: 540px) {
+  .modal, .remove-modal {
+    padding-top: 80px;
+  }
+  .modal-content {
+    width: 90%;
+  }  
+}
+
+@media(max-width: 440px) {
+  .modal-content {
+    width: 90%;
+  }  
+}
+
+@media(max-width: 360px) {
+  .modal, .remove-modal {
+    padding-top: 60px;
+  }
+  .modal-content {
+    width: 90%;
+  }  
+}

@@ -16,7 +16,12 @@
 
     <body>
         <header>
-            <a href="students.html" class="logo">Studentsy</a>
+            <div class="header-left">
+                <span>
+                    <i class="fa-solid fa-frog" style="color: #b44b28;font-size: 24px;"></i>
+                </span>
+                <a href="students.html" class="logo">Studentsy</a>
+            </div>
 
             <div class="header-right">
                 <!-- <a href="messages.html" class="bell" aria-label="notifications">
@@ -34,7 +39,7 @@
                         <h3>New Messages</h3>
                         <ul>
                             <li>
-                                <img src="gossip-t.jpg" alt="Student 1">
+                                <img src="dachshund.jpg" alt="Student 1">
                                 <div class="message-info">
                                     <p class="name">Andrii Potikha</p>
                                     <p class="message">Buona giornata!</p>
@@ -61,7 +66,7 @@
                 <div class="user-container">
                     <div class="user-profile">
                         <img src="gossip-t.jpg" alt="user-picture">
-                        <p>Polina Bakhmetieva</p>
+                        <p class="user-name">Polina Bakhmetieva</p>
                     </div>
 
                     <div class="profile-dropdown">
@@ -80,15 +85,27 @@
         </header>
 
         <main>
-            <aside>
+            <aside class="big-sidebar">
+                <nav>
+                    <ul>
+                        <li class="hideOnMobile"><a href="dashbord.html" class="nav-link">Dashbord</a></li>
+                        <li class="hideOnMobile active-nav"><a href="students.html" class="nav-link">Students</a></li>
+                        <li class="hideOnMobile"><a href="tasks.html" class="nav-link">Tasks</a></li>
+                        <!-- <li id="close-sidebar" class="close-sidebar" onclick=hideSidebar()><i class="fa-solid fa-xmark sidebar-button" style="color: #3a5635;"></i></li> -->
+                    </ul>
+                </nav>
+            </aside>
+            <aside class="small-sidebar">
                 <nav>
                     <ul>
                         <li><a href="dashbord.html" class="nav-link">Dashbord</a></li>
                         <li class="active-nav"><a href="students.html" class="nav-link">Students</a></li>
                         <li><a href="tasks.html" class="nav-link">Tasks</a></li>
+                        <li id="close-sidebar" class="close-sidebar" onclick=hideSidebar()><i class="fa-solid fa-xmark sidebar-button" style="color: #3a5635;"></i></li>
                     </ul>
                 </nav>
             </aside>
+            <span class="open-sidebar" onclick=showSidebar()><i class="fa-solid fa-bars" style="color: #f4e2d0;"></i></span>
 
             <div class="content">
                 <div class="title-container">
@@ -149,94 +166,96 @@
                 </div>
 
                 <div>
-                    <table class="studentsy">
-                        <thead>
-                            <tr>
-                            <th aria-label="select all students"><input type="checkbox" id="main-check" aria-label="checkbox to select all students"></th>
-                            <th class="group">Group</th>
-                            <th class="name">Name</th>
-                            <th class="gender">Gender</th>
-                            <th class="birthday">Birthday</th>
-                            <th class="status">Status</th>
-                            <th class="options">Options</th>
-                            <th class="id">id</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="stud-check" aria-label="1 student check" onchange="selectStudent(event)"></td>
-                                <td>PZ-25</td>
-                                <td>Polina Bakhmetieva</td>
-                                <td>F</td>
-                                <td>13.08.2006</td>
-                                <td><div class="status-active"></div></td>
-                                <td>
-                                    <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button"> 
-                                        <i class="fa-solid fa-pencil"></i>
-                                    </button>
-
-                                    <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
-                                </td>
-                                <td class="id">1</td>
+                    <div class="table-wrapper">
+                        <table class="studentsy">
+                            <thead>
+                                <tr>
+                                <th aria-label="select all students"><input type="checkbox" id="main-check" aria-label="checkbox to select all students"></th>
+                                <th class="group">Group</th>
+                                <th class="name">Name</th>
+                                <th class="gender">Gender</th>
+                                <th class="birthday">Birthday</th>
+                                <th class="status">Status</th>
+                                <th class="options">Options</th>
+                                <th class="id">id</th>
                             </tr>
-                            <tr>
-                                <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
-                                <td>PZ-25</td>
-                                <td>Andrii Potikha</td>
-                                <td>M</td>
-                                <td>18.12.2005</td>
-                                <td><div class="status-active"></div></td>
-                                <td>
-                                    <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button">
-                                        <i class="fa-solid fa-pencil"></i>
-                                    </button>
-
-                                    <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
-                                </td>
-                                <td class="id">2</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
-                                <td>PZ-25</td>
-                                <td>Maria Lytvyn</td>
-                                <td>F</td>
-                                <td>02.02.2006</td>
-                                <td><div class="status-unactive"></div></td>
-                                <td>
-                                    <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button">
-                                        <i class="fa-solid fa-pencil"></i>
-                                    </button>
-
-                                    <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
-                                </td>
-                                <td class="id">3</td>
-                            </tr>
-                            <!-- <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><div class="status-unactive"></div></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><div class="status-unactive"></div></td>
-                                <td></td>
-                            </tr> -->
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="stud-check" aria-label="1 student check" onchange="selectStudent(event)"></td>
+                                    <td>PZ-25</td>
+                                    <td>Polina Bakhmetieva</td>
+                                    <td>F</td>
+                                    <td>13.08.2006</td>
+                                    <td><div class="status-active"></div></td>
+                                    <td>
+                                        <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button"> 
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+    
+                                        <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </td>
+                                    <td class="id">1</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
+                                    <td>PZ-25</td>
+                                    <td>Andrii Potikha</td>
+                                    <td>M</td>
+                                    <td>18.12.2005</td>
+                                    <td><div class="status-active"></div></td>
+                                    <td>
+                                        <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+    
+                                        <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </td>
+                                    <td class="id">2</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
+                                    <td>PZ-25</td>
+                                    <td>Maria Lytvyn</td>
+                                    <td>F</td>
+                                    <td>02.02.2006</td>
+                                    <td><div class="status-unactive"></div></td>
+                                    <td>
+                                        <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+    
+                                        <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </td>
+                                    <td class="id">3</td>
+                                </tr>
+                                <!-- <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><div class="status-unactive"></div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><div class="status-unactive"></div></td>
+                                    <td></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
     
                     <div class="students-nav">
                         <button>&lt;-</button>
