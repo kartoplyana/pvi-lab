@@ -23,23 +23,3 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   let modal = document.getElementById("edit-student-modal");
-//   let btn = document.querySelector(".edit-button");
-//   let closeBtn = modal.querySelector(".close");
-
-//   btn.onclick = function () {
-//       modal.style.display = "block";
-//   };
-
-//   closeBtn.onclick = function () {
-//       modal.style.display = "none";
-//   };
-
-//   window.onclick = function (event) {
-//     if (event.target === modal) {
-//         modal.style.display = "none";
-//     }
-//   };
-// });
