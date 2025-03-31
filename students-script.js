@@ -39,12 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const openBtn = document.querySelector(".open-sidebar");
     const closeBtn = document.querySelector("#close-sidebar");
 
-    // Відкриття sidebar
     openBtn.addEventListener("click", function () {
         sidebar.classList.add("open");
     });
 
-    // Закриття sidebar
     closeBtn.addEventListener("click", function () {
         sidebar.classList.remove("open");
     });

@@ -88,6 +88,12 @@
   font-size: 20px;
 }
 
+@media (max-width: 956px){
+  .modal-content {
+      width: 50%;
+  }  
+}
+
 @media (max-width:760px) {
   .modal-content {
       width: 60%;

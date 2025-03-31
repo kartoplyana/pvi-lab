@@ -6,6 +6,13 @@ let cancelButton = document.querySelector(".cancel-button");
 const addButton = document.querySelector("#plus-button");
 addButton.addEventListener("click", () => {
   document.querySelector(".modal-window-header").innerText = "Add new student";
+  document.querySelector(".create-button").innerText = "Create";
+  clearInputs();
+  document.querySelector("#group-select").style.border = "0.5px solid grey";
+  document.querySelector("#first-name-input").style.border = "0.5px solid grey";
+  document.querySelector("#last-name-input").style.border = "0.5px solid grey";
+  document.querySelector("#gender-select").style.border = "0.5px solid grey";
+  document.querySelector("#birthday-input").style.border = "0.5px solid grey";
 })
 
 btn.onclick = function() {
@@ -47,7 +54,7 @@ function addRow(group, firstName, lastName, gender, birthday) {
             <td>${birthday.split("-").reverse().join(".")}</td>
             <td><div class="${(firstName === 'Polina' && lastName === 'Bakhmetieva') ? 'status-active' : 'status-unactive'}"</div></td>   
             <td>
-            <button class="edit-button" onclick="openEditStudentModal(event)"  aria-label="edit button"> 
+            <button class="edit-button" onclick="openEditStudentModal(event)" aria-label="edit button"> 
               <i class="fa-solid fa-pencil"></i>
             </button>
 
@@ -65,6 +72,9 @@ function addRow(group, firstName, lastName, gender, birthday) {
 }
 
 createButton.addEventListener("click", (e) => {
+  if (e.target.innerText !== "Create")
+    return;
+
   e.preventDefault();
 
   const group = groupSelect.value;
@@ -79,16 +89,52 @@ createButton.addEventListener("click", (e) => {
   }
   const birthday = birthdayInput.value;
 
-  if (  groupSelect.selectedIndex === 0 ||
-    firstNameInput.value === ""||
-    lastNameInput.value === "" ||
-    genderSelect.selectedIndex === 0 ||
-    birthdayInput.value === "") {
-      alert("Fills are empty. Fill them, please");
+  if (groupSelect.selectedIndex === 0) {
+      document.querySelector("#group-select").style.border = "2px solid red";
       return;
   }
+  else {
+    document.querySelector("#group-select").style.border = "0.5px solid grey";
+  }
+
+  let regexName = /^[A-Z][A-Za-z]+(-[A-Za-z]+)*$/;
+  if (!regexName.test(firstNameInput.value)) {
+      document.querySelector("#first-name-input").style.border = "2px solid red";
+      return;
+  }
+  else {
+    document.querySelector("#first-name-input").style.border = "0.5px solid grey";
+  }
+
+  if (!regexName.test(lastNameInput.value)) {
+      document.querySelector("#last-name-input").style.border = "2px solid red";
+      return;
+  }
+  else {
+    document.querySelector("#last-name-input").style.border = "0.5px solid grey";
+  }
+
+  if (genderSelect.selectedIndex === 0) {
+      document.querySelector("#gender-select").style.border = "2px solid red";
+      return;
+  }
+  else {
+    document.querySelector("#gender-select").style.border = "0.5px solid grey";
+  }
+
+  if (birthdayInput.value === "") {
+      document.querySelector("#birthday-input").style.border = "2px solid red";
+      return;
+  }
+  else {
+    document.querySelector("#birthday-input").style.border = "0.5px solid grey";
+  }
+
 
   addRow(group, firstName, lastName, gender, birthday);
+
+  let newStudent = {  id:newStudendId, group:group, firstName:firstName, lastName:lastName, gender:gender, birthday:birthday };
+  console.log(JSON.stringify(newStudent));
 
   document.querySelector("#add-student-modal").style.display = "none";
   document.querySelector(".modal").style.display = "none";

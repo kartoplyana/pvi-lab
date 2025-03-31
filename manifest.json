@@ -1,0 +1,26 @@
+{
+    "name": "Studentsy",
+    "short_name": "Studentsy",
+    "start_url": "/students.html",
+    "display": "standalone",
+    "background_color": "#F4E2D0",
+    "theme_color": "#B44B28",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/img/icons/lil-frog.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "/img/icons/big-frog.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/img/icons/gossip-t.jpg",
+            "type": "image/jpg",
+            "sizes": "512x512"
+        }
+    ]
+}

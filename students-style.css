@@ -388,6 +388,10 @@ h1 {
     cursor: pointer;
 }
 
+.input-group {
+    border-radius: 4px;
+}
+
 .table-wrapper {
     overflow-x: auto;
     max-width: 84vw;
