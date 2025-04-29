@@ -5,14 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <title>Studentsy</title>
-        <link rel="icon" type="image/x-icon" href="/img/icons/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/pvi/assets/img/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="./students-style.css"/>
-        <link rel="stylesheet" href="./modal-window.css"/>
-        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="/pvi/assets/css/students.css"/>
+        <link rel="stylesheet" href="/pvi/assets/css/modal-window.css"/>
     </head>
 
     <body>
@@ -35,21 +34,21 @@
                         <h3>New Messages</h3>
                         <ul>
                             <li>
-                                <img src="/img/icons/dachshund.jpg" alt="Student 1">
+                                <img src="/pvi/assets/img/dachshund.jpg" alt="Student 1">
                                 <div class="message-info">
                                     <p class="name">Andrii Potikha</p>
                                     <p class="message">Buona giornata!</p>
                                 </div>
                             </li>
                             <li>
-                                <img src="/img/icons/gossip-t.jpg" alt="Student 2">
+                                <img src="/pvi/assets/img/gossip-t.jpg" alt="Student 2">
                                 <div class="message-info">
                                     <p class="name">Kate Havryshchuk</p>
                                     <p class="message">See u on lection!</p>
                                 </div>
                             </li>
                             <li>
-                                <img src="/img/icons/gossip-t.jpg" alt="Student 3">
+                                <img src="/pvi/assets/img/gossip-t.jpg" alt="Student 3">
                                 <div class="message-info">
                                     <p class="name">Maria Lytvyn</p>
                                     <p class="message">Let`s eat some cake with coffee</p>
@@ -61,7 +60,7 @@
 
                 <div class="user-container">
                     <div class="user-profile">
-                        <img src="/img/icons/gossip-t.jpg" alt="user-picture">
+                        <img src="/pvi/assets/img/gossip-t.jpg" alt="user-picture">
                         <p class="user-name">Polina Bakhmetieva</p>
                     </div>
 
@@ -153,6 +152,8 @@
                                 <input type="date" id="birthday-input" aria-label="birthday input" min="1955-01-01" max="2009-10-31">
                             </div>
 
+                            <div id="error-messages" style="color: red; margin-top: 10px;"></div>
+
                             <button class="cancel-button">Cancel</button>
                             <button class="create-button">Create</button>
                         </div>
@@ -176,85 +177,14 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><input type="checkbox" class="stud-check" aria-label="1 student check" onchange="selectStudent(event)"></td>
-                                    <td>PZ-25</td>
-                                    <td>Polina Bakhmetieva</td>
-                                    <td>F</td>
-                                    <td>13.08.2006</td>
-                                    <td><div class="status-active"></div></td>
-                                    <td>
-                                        <button class="edit-button" onclick="openEditStudentModal(event)" aria-label="edit button"> 
-                                            <i class="fa-solid fa-pencil"></i>
-                                        </button>
-    
-                                        <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </td>
-                                    <td class="id">1</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
-                                    <td>PZ-25</td>
-                                    <td>Andrii Potikha</td>
-                                    <td>M</td>
-                                    <td>18.12.2005</td>
-                                    <td><div class="status-active"></div></td>
-                                    <td>
-                                        <button class="edit-button" onclick="openEditStudentModal(event)" aria-label="edit button">
-                                            <i class="fa-solid fa-pencil"></i>
-                                        </button>
-    
-                                        <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </td>
-                                    <td class="id">2</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="stud-check" aria-label="2 student check" onchange="selectStudent(event)"></td>
-                                    <td>PZ-25</td>
-                                    <td>Maria Lytvyn</td>
-                                    <td>F</td>
-                                    <td>02.02.2006</td>
-                                    <td><div class="status-unactive"></div></td>
-                                    <td>
-                                        <button class="edit-button" onclick="openEditStudentModal(event)" aria-label="edit button">
-                                            <i class="fa-solid fa-pencil"></i>
-                                        </button>
-    
-                                        <button class="remove-button" onclick="openStudentModal(event)"  aria-label="remove button">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
-                                    </td>
-                                    <td class="id">3</td>
-                                </tr>
-                                <!-- <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><div class="status-unactive"></div></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><div class="status-unactive"></div></td>
-                                    <td></td>
-                                </tr> -->
+
                             </tbody>
                         </table>
                     </div>
     
                     <div class="students-nav">
                         <button>&lt;-</button>
-                        <button class="first">1</button>
+                        <button>1</button>
                         <button>2</button>
                         <button>3</button>
                         <button>4</button>
@@ -267,19 +197,51 @@
 
         <div id="remove-student-modal" class="remove-modal">
             <div class="modal-content">
-                <span class="close" onclick="cancelModalButton()">&times;</span>
+                <span class="close" id="remove-close">&times;</span>
                 <h1 class="modal-window-header">Warning</h1>
 
                 <p>Are you sure you want to delete user </p>
-                <button class="cancel-button" onclick="cancelModalButton()">Cancel</button>
+                <button class="cancel-button" id="remove-cancel">Cancel</button>
                 <button class="ok-button">Ok</button>
             </div>
         </div>
 
-        <script src="index.js"></script>
-        <script src="add-button.js"></script>
-        <script src="edit-button.js"></script>
-        <script src="students-script.js"></script>
-        <script src="remove-button.js"></script>
+        <script src="/pvi/assets/js/students.js"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+            const name = sessionStorage.getItem('first_name');
+            const surname = sessionStorage.getItem('last_name');
+            
+            console.log("Retrieved from session:", name, surname);
+            
+            if (name && surname) {
+                const userNameElement = document.querySelector('.user-name');
+                
+                if (userNameElement) {
+                    // Якщо елемент існує, просто змінюємо його текст
+                    userNameElement.textContent = `${name} ${surname}`;
+                    console.log("Updated existing element");
+                } else {
+                    // Якщо елемент не існує, створюємо новий
+                    const profileArea = document.createElement('div');
+                    profileArea.innerHTML = `<b>${surname} ${name}</b>`;
+                    profileArea.style.position = "absolute";
+                    profileArea.style.top = "10px";
+                    profileArea.style.right = "10px";
+                    profileArea.style.color = "#3a5635";
+                    profileArea.style.zIndex = "1000";
+                    profileArea.style.backgroundColor = "rgba(244, 226, 208, 0.8)";
+                    profileArea.style.padding = "5px 10px";
+                    profileArea.style.borderRadius = "5px";
+                    
+                    document.body.appendChild(profileArea);
+                    console.log("Created new element");
+                }
+            } else {
+                console.log("No user data found in session");
+            }
+        });
+        </script>
+
     </body>
 </html>

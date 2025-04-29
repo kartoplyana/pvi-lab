@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <title>Studentsy</title>
-        <link rel="icon" type="image/x-icon" href="/img/icons/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/pvi/assets/img/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -84,18 +84,18 @@
             <aside class="big-sidebar">
                 <nav>
                     <ul>
-                        <li class="hideOnMobile"><a href="dashbord.html" class="nav-link">Dashbord</a></li>
+                        <li class="hideOnMobile active-nav"><a href="dashbord.html" class="nav-link">Dashbord</a></li>
                         <li class="hideOnMobile"><a href="students.html" class="nav-link">Students</a></li>
-                        <li class="hideOnMobile active-nav"><a href="tasks.html" class="nav-link">Tasks</a></li>
+                        <li class="hideOnMobile"><a href="tasks.html" class="nav-link">Tasks</a></li>
                     </ul>
                 </nav>
             </aside>
             <aside class="small-sidebar">
                 <nav>
                     <ul>
-                        <li><a href="dashbord.html" class="nav-link">Dashbord</a></li>
+                        <li class="active-nav"><a href="dashbord.html" class="nav-link">Dashbord</a></li>
                         <li><a href="students.html" class="nav-link">Students</a></li>
-                        <li class="active-nav"><a href="tasks.html" class="nav-link">Tasks</a></li>
+                        <li><a href="tasks.html" class="nav-link">Tasks</a></li>
                         <li id="close-sidebar" class="close-sidebar" onclick=hideSidebar()><i class="fa-solid fa-xmark sidebar-button" style="color: #3a5635;"></i></li>
                     </ul>
                 </nav>
@@ -104,7 +104,7 @@
 
             <div class="content">
                 <div class="title-container">
-                    <h1>Tasks</h1>
+                    
                     
                 </div>
 

@@ -572,3 +572,8 @@ input[type="checkbox"]:checked::after {
     border: 2px solid #f4e2d0;
 }
 
+.students-nav button.active {
+    background-color: #b44b28;
+    color: whitesmoke;
+    border: 2px solid #f4e2d0;
+}
