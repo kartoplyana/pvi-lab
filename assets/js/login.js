@@ -13,9 +13,13 @@ document.querySelector('.logIn-button').addEventListener('click', async () => {
 
     const result = await response.json();
 
+    console.log(result);
+
     if (result.success) {
+        sessionStorage.setItem('user_id', result.user_id);
         sessionStorage.setItem('first_name', result.first_name);
         sessionStorage.setItem('last_name', result.last_name);
+
         window.location.href = '/pvi/students/index';
     } else {
         errorDiv.textContent = result.message;
